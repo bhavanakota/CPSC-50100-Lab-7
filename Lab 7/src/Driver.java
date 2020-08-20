@@ -2,19 +2,28 @@ import java.util.Arrays;
 import java.util.Stack;
 
 /*
+Exercise 1
 Create a new Driver class with a main method. In this method, do the following:
 1. Create an instance of an ArrayStack and a LinkedStack class.
 2. Push the following int's onto the two stacks: (1,7,3,4,9,2)
 3. Pop off all the elements from the stacks, displaying each int as it's removed
+
+Exercise 2
+Modify the LinkedStack class to include a new method called removeBottomHalf, 
+which removes the half of elements sitting at the bottom of the stack.
+Test the method using the Driver program.
+What is the time complexity of this method?
 */
 public class Driver {
 
 	public static void main(String[] args) {
 
+		// Creating the ArrayStack and LinkedStack
 		ArrayStack arrayS = new ArrayStack();
 
 		LinkedStack linkedS = new LinkedStack();
 
+		// Pushing the values into each stack 
 		arrayS.push(1);
 		arrayS.push(7);
 		arrayS.push(3);
@@ -29,6 +38,7 @@ public class Driver {
 		linkedS.push(9);
 		linkedS.push(2);
 
+		// Until the array is empty, keep popping off the values and print each value
 		while (!arrayS.isEmpty()) {
 			System.out.println("ArrayStack: " + arrayS.pop());
 		}
@@ -41,6 +51,7 @@ public class Driver {
 
 		System.out.print("\n");
 
+		// Creating a new LinkedStack for exercise 2 
 		LinkedStack linkedS2 = new LinkedStack();
 
 		linkedS2.push(1);
@@ -50,8 +61,10 @@ public class Driver {
 		linkedS2.push(9);
 		linkedS2.push(2);
 
+		// This connects to the removeBottomHalf method from the LinkedStack class 
 		linkedS2.removeBottomHalf();
 
-		System.out.println("Removed bottom half = " + linkedS2);
+		// Printing out the remaining elements
+		System.out.println("After removing bottom half = " + linkedS2);
 	}
 }
