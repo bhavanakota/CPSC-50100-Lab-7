@@ -57,20 +57,26 @@ public class LinkedStack {
 		return str;
 	}
 
+	// Creating this method to remove the bottom half of linkedS2
 	public void removeBottomHalf() {
 
+		// Initializing the half variable
 		int half = 0;
 
+		// Setting half equal to 2 
 		half = count / 2;
 
-		LinkedNode temp = front;
+		LinkedNode newLinked = front;
 
+		// This sets the newLinked equal to the middle value of the stack
 		for (int i = 0; i < half - 1; i++) {
-			temp = temp.next;
+			newLinked = newLinked.next;
 		}
-		
-		if( temp!= null) {
-			temp.next = null; 
+
+		// This then starts from the middle value and removes all the values under that
+		// until it is equal to null, when the count equals half.
+		if (newLinked != null) {
+			newLinked.next = null;
 			count = half;
 		}
 	}
