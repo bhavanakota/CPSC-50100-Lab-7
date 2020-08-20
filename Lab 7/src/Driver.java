@@ -66,5 +66,7 @@ public class Driver {
 
 		// Printing out the remaining elements
 		System.out.println("After removing bottom half = " + linkedS2);
+		
+		// I believe the time complexity of this is O(N). 
 	}
 }
